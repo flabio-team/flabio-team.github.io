@@ -1,0 +1,13 @@
+.flabContact {
+	// padding-bottom: 0;
+	&__map {
+		min-height: rem(450px);
+		width: 100%;
+		@include media-breakpoint-down(md) {
+			min-height: rem(350px);
+		}
+		.leaflet-bottom {
+			display: none;
+		}
+	}
+}
