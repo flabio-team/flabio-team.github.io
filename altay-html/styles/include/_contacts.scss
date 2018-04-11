@@ -11,15 +11,12 @@
 		.leaflet-bottom {
 			display: none;
 		}
-	}	
-	&__communications {
-		min-height: rem(400px);
-		@include media-breakpoint-down(md) {
-			min-height: rem(400px);
-		}
 	}
-	&__communicationsDesc {		
-		padding-top: rem(49px);
+	&__communications {
+
+	}
+	&__communicationsDesc {
+		padding-top: rem(30px);
 		@include media-breakpoint-down(md) {
 			padding-top: rem(30px);
 		}
@@ -82,7 +79,7 @@
 	&__caption {
 		font-size: rem(30px);
 		color: #000;
-		position: relative;		
+		position: relative;
 		margin-bottom: rem(20px);
 		@include media-breakpoint-down(md) {
 			font-size: rem(20px);
@@ -94,7 +91,7 @@
 			padding-right: rem(15px);
 		}
 		&--captionForm {
-			text-align: center;
+			// text-align: center;
 			padding-left: 0;
 		}
 	}
@@ -102,7 +99,7 @@
 		width: 100%;
 		max-width: 100%;
 		background-color: #f5f5f5;
-		padding: rem(49px) rem(30px) 0;
+		padding: rem(30px) rem(20px) rem(20px) ;
 		@include media-breakpoint-down(md) {
 			padding: rem(30px) rem(20px) 0;
 		}
@@ -113,7 +110,7 @@
 			padding: rem(15px) rem(10px) 0;
 		}
 		form {
-			min-height: rem(400px);
+			// min-height: rem(400px);
 			@include media-breakpoint-down(md) {
 				min-height: rem(380px);
 			}
@@ -123,7 +120,7 @@
 			input,textarea {
 				background-color: rgb(255, 255, 255);
 				max-width: 100%;
-				width: 100%;		
+				width: 100%;
 				margin-bottom: rem(20px);
 				padding-left: rem(30px);
 				border: none;
@@ -150,7 +147,6 @@
 			button {
 				background-color: transparent;
 			}
-		}		
+		}
 	}
 }
-

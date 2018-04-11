@@ -149,22 +149,22 @@
           <div class="row">
             <div class="col-xl-7 col-lg-7 col-md-6">
               <div class="flabContact__communicationsDesc">
-                <h2 class="flabContact__caption"><i class="flabio-etno"></i>Гостевой дом “Алтай”</h2> 
+                <h2 class="flabContact__caption"><i class="flabio-etno"></i>Гостевой дом “Алтай”</h2>
                 <p>Это не просто место где вы можете остановиться на ночь, это удобное современное пространство, в котором сочетаются комфортные условия для работы, учебы и отдыха с домашним уютом и дружественной атмосферой, куда приезжают интересные позитивные люди, открытые для всего нового.</p>
                 <ul>
                   <li><i class="flabio-location"></i>722200 Кыргызстан, г. Каракол, ул. К.Карасаева (Тельман) 303</li>
                   <li><i class="flabio-mobile"></i><a href="tel:+996555555555">+996 555 55 55 55</a></li>
                   <li><i class="flabio-mail"></i><a href="mailto:altay@gmail.com">altay@gmail.com</a></li>
-                </ul>              
-              </div> 
+                </ul>
+              </div>
             </div>
             <div class="col-xl-5 col-lg-5 col-md-6">
               <div class="flabContact__form">
                 <form action="">
                   <h2 class="flabContact__caption flabContact__caption--captionForm"><i class="flabio-etno"></i>Свяжитесь с нами</h2>
-                  <input type="text" placeholder="Имя"> 
+                  <input type="text" placeholder="Имя">
                   <input type="text" placeholder="Email">
-                  <textarea name="" id="" placeholder="Ваше сообщение"></textarea> 
+                  <textarea name="" id="" placeholder="Ваше сообщение"></textarea>
                   <div class="flabBtn">
                     <button class="flabBtn__btnLink" type="submit" href="#">Отправить</button>
                   </div>
@@ -285,5 +285,23 @@
       <script src="scripts/vendor.min.js"></script>
 
       <script src="scripts/main.js"></script>
+      <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+      <script type="text/javascript">
+      var map;
+      DG.then(function () {
+        map = DG.map('map', {
+          center: [42.492048, 78.417642],
+          scrollWheelZoom: false,
+          zoom: 17
+        });
+
+        var myIcon = L.icon({
+          iconUrl: 'images/contacts/marker.png',
+          iconSize: [40, 53],
+        });
+
+        DG.marker([42.492280, 78.417672], {icon: myIcon}) .addTo(map).bindPopup('Гостевой Дом <strong>"Алтай"</strong> <br />г.Каракол  <br />ул.К.Карасаева (Тельмана) 303').bindLabel('Гостевой Дом <strong>"Алтай"</strong> <br />г.Каракол  <br />ул.К.Карасаева (Тельмана) 303');
+      });
+    </script>
     </body>
     </html>
