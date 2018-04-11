@@ -29,4 +29,16 @@
   &--contacts {
    padding-top: 0;
  }
+ &--kitchen {
+  padding-bottom: rem(40px);
+  @include media-breakpoint-down(md) {
+    padding-bottom: rem(20px);
+  }
+  @include media-breakpoint-down(sm) {
+    padding-bottom: rem(0);
+  }
+  @include media-breakpoint-down(xs) {
+    padding-bottom: rem(20px);
+  }
+}
 }

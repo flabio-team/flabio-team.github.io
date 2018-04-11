@@ -19,10 +19,61 @@
 		padding: 0;
 		margin: 0;
 		padding-top: rem(20px);
+		border-bottom: rem(1px) solid #d4d4d4;
+		margin-bottom: rem(30px);
+		padding-bottom: rem(30px);
 	}
 	&__sourceItems {
-		display: block;
-		min-width: rem(185px);
+		margin: 0 auto;
+		max-width: rem(900px);
+		display: flex;
+		flex-direction: row;
+	}
+	&__itemsReviewsLinks {
+		border: rem(1px) solid #a5a5a5;
+		display: inline-block;
+		text-align: left;
+		cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		margin-right: rem(30px);
+		&:hover {
+			.flabReviewsPage__itemsReviewsLogo {
+				background-color: #ffa527;
+				.flabio-etno {
+					color: #dd0001;
+				}
+			}
+		}
+	}
+	&__itemsReviewsLogo {
+		max-width: rem(45px);
+		min-height: rem(40px);
+		width: 100%;
+		height: 100%;
+		border-right: rem(1px) solid #a5a5a5;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all .4s;
+		i {
+			transition: all .4s;
+		}
+		.flabio-etno {
+			color: #a5a5a5;
+			font-size: rem(25px);
+			margin-right: 4px;
+		}
+	}
+	&__itemsReviewsName {
+		min-height: rem(40px);
+		max-width: rem(140px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 rem(15px);
 	}
 	.chat {
 		ul {

@@ -54,6 +54,7 @@
 			color: $white;
 			font-size: rem(20px);
 			font-weight: 400;
+			transform: translateY(17px);
 			@include media-breakpoint-down(lg) {
 				font-size: rem(18px);
 			}
@@ -76,6 +77,9 @@
 		}
 		&:hover {
 			.flabRest__fallingCaption {
+				h2 {
+					transform: translateY(0);
+				}
 				&::before, &::after {
 					opacity: 1;
 					transform: scale(1);
@@ -84,6 +88,37 @@
 			p {
 				opacity: 1;
 				transform: translate3d(0, 0, 0);
+			}
+		}
+		&--kitchenEffect {
+			max-width: 100%;
+			width: 100%;
+			display: block;
+			margin-bottom: rem(30px);
+			@include media-breakpoint-down(xs) {
+				margin-bottom: rem(20px);
+			}
+			&:before {
+				background-color: rgba(0,0,0,0.4);
+				transition: all .3s;
+			}
+			a{
+				display: block;
+				outline: none;
+				img {
+					width: 100%;	
+					max-width: 100%;
+				}			
+			}
+			.flabRest__fallingCaption {
+				h2 {
+					text-transform: uppercase;
+				}
+				p {
+					i {
+						font-size: rem(27px);
+					}
+				}
 			}
 		}
 	}
