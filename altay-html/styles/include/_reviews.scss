@@ -166,24 +166,25 @@
 	&__link {
 		position: absolute;
 		bottom: rem(10px);
-		left: 50%;
-		transform: translateX(-50%);
+		width: 100%;
+		text-align: center;
 		@include media-breakpoint-down(sm) {
 			position: relative;
-			display: flex;
-			align-items: flex-end;
-			justify-content: center;
-			height: rem(70px);
+			margin-top: 20px;
 		}
 		p{
-			display: flex;
-			justify-content: center;
-			vertical-align: bottom;
+			display: inline-block;
 			a{
-				max-width: rem(115px);
-				width: 100%;
+				// max-width: rem(115px);
 				display: inline-block;
 				margin-left: rem(10px);
+				img{
+					position: relative;
+					top: -2px;
+					height: 20px;
+					width: auto !important;
+					display: inline-block !important;
+				}
 			}
 		}
 	}

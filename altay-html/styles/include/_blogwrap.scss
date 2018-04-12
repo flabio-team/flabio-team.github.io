@@ -81,13 +81,7 @@
 	}
 	// ul end
 	&__block{
-		padding-top: rem(28px);
-		padding-bottom: rem(50px);
-		border-bottom: rem(1px) solid #f5f5f5;
-		@include media-breakpoint-down(md) {
-			padding-top: rem(18px);
-			padding-bottom: rem(15px);
-		}
+		
 	}
 	&__headline{
 		color: $black;
@@ -264,35 +258,4 @@
 			opacity: 0;
 		}
 	}
-	// pagination start
-	&__navigation{
-		text-align: center;
-		.page-numbers{
-			color: #a4a3a3;
-			font-size: rem(14px);
-			font-weight: 400;
-			border: rem(1px) solid #a4a3a3;
-			padding: rem(6px) rem(10px);
-			padding-bottom: rem(5px);
-			margin-left: rem(5px);
-			text-decoration: none;
-			display: inline-block;
-			&:first-child{
-				margin-left: 0;
-			}
-			i{
-				font-size: 9px;
-				padding-left: 5px;
-			}
-			&:hover{
-				background-color: #292929;
-				color: $white;
-			}
-		}
-		.current{
-			background-color: #292929;
-			color: $white;
-		}
-	}
-	// pagination end
 }
