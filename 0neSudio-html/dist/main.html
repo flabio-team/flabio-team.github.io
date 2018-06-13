@@ -134,7 +134,7 @@
       </div>
       <div  class="flabMainVideo__videoContent video-js">
         <div class="flabMainVideo__videoWrap">    
-          <video class="videoRotate" loop  autoplay="" muted="true" preload="auto" id="video">
+          <video class="videoRotate" loop  autoplay=""  preload="auto" id="video">
             <source type="video/mp4" src="images/mainPageVideo/promo.mp4">
             </video>    
             <div class="flabMainVideo__aboutSt">
@@ -159,7 +159,14 @@
           </div>                          
         </div>
       </div>
-      
+      <script>
+       window.onload = function(){
+         setTimeout(function(){
+          $("#video").prop('muted', false);
+         }, 500);
+
+       };
+     </script>
 
 
 
