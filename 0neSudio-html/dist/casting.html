@@ -370,14 +370,54 @@
                   <div class="col-md-4">
                     <div class="flabCasting__input flabCasting__input--file">
                       <button>отправить</button>
-                      <input type="file" name="files[]" id="file" class="inputfile inputfile-1" multiple />
-                      <!-- <label for="file-1"><i class="flabio-paperclip-1"></i> <span>Прикрепить файл&hellip;</span></label> -->
+
+                      <div class="flabUpload">
+                        <input name="file" type="file" class="th_file" multiple />
+                        <div class="flabAddButton">
+                          <p><i class="fal fa-paperclip"></i>Прикрепить файл</p>
+                        </div>                                
+                      </div>                     
+
                     </div>
-
-
                   </div>
-
                 </div>
+                <div class="flabPreviews">
+                  <div class="flabTemplate">
+                    <div class="flabView">
+                      <span><img data-dz-thumbnail></span>
+                      <p class="flabPreviews__name" data-dz-name></p>
+                      <p data-dz-size>1</p>
+                      <p data-dz-errormessage></p>
+                      <i data-dz-remove class="fal fa-times close-js"></i>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                // uploads files  http://www.dropzonejs.com   //////////////////////////////////////////////////////////////////
+
+                // var previewNode = document.querySelector(".flabTemplate");
+                // previewNode.id = "";
+                // var previewTemplate = previewNode.parentNode.innerHTML;
+                // previewNode.parentNode.removeChild(previewNode);
+
+                // var myDropzone = new Dropzone(".container", { 
+                //   url: "/upload", 
+                //   thumbnailWidth: 80,
+                //   thumbnailHeight: 80,
+                //   parallelUploads: 20,
+                //   previewTemplate: previewTemplate,
+                //   autoQueue: false, 
+                //   previewsContainer: ".flabPreviews", 
+                //   clickable: ".flabAddButton" 
+                // });
+                // uploads files end //////////////////////////////////////////////////////////////////
+
+
+
+
               </form>
             </div>
           </div>
