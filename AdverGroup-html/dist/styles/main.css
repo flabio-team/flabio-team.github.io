@@ -5299,9 +5299,63 @@ body {
   display: none;
 }
 
-.flabVacancy__moreInfoCaption {
+.flabVacancy__moreInfo h4 {
   font-size: 1rem;
   margin-bottom: 1.5625rem;
+}
+
+.flabVacancy__moreInfo ul {
+  margin: 0;
+  padding: 0;
+}
+
+.flabVacancy__moreInfo ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.875rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 991.98px) {
+  .flabVacancy__moreInfo ul li {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .flabVacancy__moreInfo ul li {
+    padding-left: 1.25rem;
+  }
+}
+
+.flabVacancy__moreInfo ul li:last-child {
+  margin-bottom: 0;
+}
+
+.flabVacancy__moreInfo ul li:before {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 0.125rem;
+  background-color: #fc3f69;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+@media (max-width: 767.98px) {
+  .flabVacancy__moreInfo ul li:before {
+    width: 0.9375rem;
+  }
+}
+
+.flabVacancy__moreInfo p {
+  margin: 0;
+}
+
+.flabVacancy__moreInfo p a {
+  color: #fc3f69;
+  text-decoration: none;
 }
 
 .flabVacancy__item {
@@ -5385,15 +5439,6 @@ body {
   .flabVacancy__item:before {
     display: block;
   }
-}
-
-.flabVacancy__PS {
-  margin: 0;
-}
-
-.flabVacancy__PS a {
-  color: #fc3f69;
-  text-decoration: none;
 }
 
 .flabVacancy .flabTab {
