@@ -1,6 +1,23 @@
 'use strict';
 
 $(document).ready(function () {
+  // apperance block
+
+
+  // apperance block end
+
+
+  // smooth scroll down //////////////////////////////////////////////////////////////
+  $(".flabSmooth").click(function (e) {
+    e.preventDefault();
+    var href = $(this).attr('href');
+    $('html, body').animate({
+      scrollTop: $(href).offset().top
+    }, 800);
+  });
+
+  // smooth scroll down end //////////////////////////////////////////////////////////////
+
 
   // menu header //////////////////////////////////////////////////////////////
   $('.flabHamburger').on('click', function () {
@@ -43,6 +60,10 @@ $(document).ready(function () {
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: false
@@ -72,6 +93,10 @@ $(document).ready(function () {
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: false
@@ -129,6 +154,10 @@ $(document).ready(function () {
     slidesPerGroup: 2,
     loop: true,
     loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 100,
+      disableOnInteraction: false
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -155,6 +184,10 @@ $(document).ready(function () {
     spaceBetween: 30,
     loop: true,
     loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -190,14 +223,15 @@ $(document).ready(function () {
   // slider of flabBlog end //////////////////////////////////////////////////////////////////
 
   // slider of flabMainSlider //////////////////////////////////////////////////////////////////
-  var swiper = new Swiper('.flabMainDlider-js', {
+  var swiper = new Swiper('.flabMainSlider-js', {
+    effect: 'fade',
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     loopFillGroupWithBlank: true,
     loopedSlides: 1,
     autoplay: {
-      delay: 5000,
+      delay: 3000,
       disableOnInteraction: false
     }
   });
@@ -206,54 +240,56 @@ $(document).ready(function () {
   // swiper end //////////////////////////////////////////////////////////////////
 
   // portfolio filter //////////////////////////////////////////////////////////////////
-  var filterSelector = '*';
+  $(window).on('load', function () {
+    var filterSelector = '*';
 
-  var $grid = $('.flabPortfolio__grid').isotope({
-    itemSelector: '.flabPortfolio__item',
-    layoutMode: 'fitRows',
+    var $grid = $('.flabPortfolio__grid').isotope({
+      itemSelector: '.flabPortfolio__item',
+      layoutMode: 'fitRows',
 
-    fitRows: {
-      gutter: 30
-    },
-    sortBy: 'selector',
-    getSortData: {
-      selector: function selector(itemElem) {
-        return !$(itemElem).is(filterSelector);
+      fitRows: {
+        gutter: 30
+      },
+      sortBy: 'selector',
+      getSortData: {
+        selector: function selector(itemElem) {
+          return !$(itemElem).is(filterSelector);
+        }
       }
-    }
-  });
-
-  var $items = $grid.find('.flabPortfolio__item');
-
-  // bind button click
-  $('.flabPortfolio__filters ul').on('click', 'li', function () {
-    filterSelector = $(this).attr('data-filter');
-    $grid.isotope('updateSortData').isotope();
-    // change is-filtered-out class
-    $items.filter(filterSelector).removeClass('is-filtered-out');
-    $items.not(filterSelector).addClass('is-filtered-out');
-  });
-
-  // change is-checked class on buttons
-  $('.button-group').each(function (i, buttonGroup) {
-    var $buttonGroup = $(buttonGroup);
-    $buttonGroup.on('click', 'button', function () {
-      $buttonGroup.find('.is-checked').removeClass('is-checked');
-      $(this).addClass('is-checked');
     });
-  });
 
-  // portfolio filter  end //////////////////////////////////////////////////////////////////
+    var $items = $grid.find('.flabPortfolio__item');
 
-  // select portfolio  //////////////////////////////////////////////////////////////////
-  $('.select-js').on('click', function () {
-    $('.backgroundBlack').addClass('dbbg');
-    $('.flabPortfolio__filters').slideDown();
-  });
+    // bind button click
+    $('.flabPortfolio__filters ul').on('click', 'li', function () {
+      filterSelector = $(this).attr('data-filter');
+      $grid.isotope('updateSortData').isotope();
+      // change is-filtered-out class
+      $items.filter(filterSelector).removeClass('is-filtered-out');
+      $items.not(filterSelector).addClass('is-filtered-out');
+    });
 
-  $('.flabPortfolio__filters ul li a').on('click', function () {
-    $('.flabPortfolio__filters').slideUp();
-    $('.backgroundBlack').removeClass('dbbg');
+    // change is-checked class on buttons
+    $('.button-group').each(function (i, buttonGroup) {
+      var $buttonGroup = $(buttonGroup);
+      $buttonGroup.on('click', 'button', function () {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+      });
+    });
+
+    // portfolio filter  end //////////////////////////////////////////////////////////////////
+
+    // select portfolio  //////////////////////////////////////////////////////////////////
+    $('.select-js').on('click', function () {
+      $('.backgroundBlack').addClass('dbbg');
+      $('.flabPortfolio__filters').slideDown();
+    });
+
+    $('.flabPortfolio__filters ul li a').on('click', function () {
+      $('.flabPortfolio__filters').slideUp();
+      $('.backgroundBlack').removeClass('dbbg');
+    });
   });
   // select portfolio end  //////////////////////////////////////////////////////////////////
 

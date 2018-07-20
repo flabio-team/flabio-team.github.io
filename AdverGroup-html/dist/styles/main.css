@@ -1549,7 +1549,8 @@ body {
   height: 5.9375rem;
 }
 
-.mm-panels > .mm-panel > .mm-listview:first-child, .mm-panels > .mm-panel > .mm-navbar + .mm-listview {
+.mm-panels > .mm-panel > .mm-listview:first-child,
+.mm-panels > .mm-panel > .mm-navbar + .mm-listview {
   margin-top: 0.3125rem;
 }
 
@@ -1557,13 +1558,15 @@ body {
   width: 6.25rem;
 }
 
-.mm-panel:after, .mm-panel:before {
+.mm-panel:after,
+.mm-panel:before {
   content: '';
   display: block;
   height: 3.5rem;
 }
 
-.mm-counter + .mm-btn_next:not(.mm-btn_fullwidth) + a, .mm-counter + .mm-btn_next:not(.mm-btn_fullwidth) + span {
+.mm-counter + .mm-btn_next:not(.mm-btn_fullwidth) + a,
+.mm-counter + .mm-btn_next:not(.mm-btn_fullwidth) + span {
   margin-right: 0;
 }
 
@@ -1581,7 +1584,8 @@ body {
   right: 0.9375rem;
 }
 
-.mm-menu_theme-dark .mm-listitem_selected > a:not(.mm-btn_next), .mm-menu_theme-dark .mm-listitem_selected > span {
+.mm-menu_theme-dark .mm-listitem_selected > a:not(.mm-btn_next),
+.mm-menu_theme-dark .mm-listitem_selected > span {
   background: none;
 }
 
@@ -3009,6 +3013,114 @@ body {
   display: none;
 }
 
+.arrows {
+  width: 40px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2.5rem;
+  z-index: 9;
+}
+
+.arrows path {
+  stroke: #fc3f69;
+  fill: transparent;
+  stroke-width: 2px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s;
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+
+.flabApperance {
+  position: fixed;
+  top: 0;
+  right: 0.9375rem;
+  z-index: 1;
+  height: 100%;
+  background-color: #fff;
+  max-width: 3.125rem;
+  width: 100%;
+  display: none;
+}
+
+.flabApperance:before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 0.0625rem;
+  background-color: #cf3c3a;
+  left: 0.625rem;
+}
+
+.flabApperance:after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 0.25rem;
+  background-color: #cf3c3a;
+  left: 0.1875rem;
+  background-color: #102948;
+}
+
+.flabApperance .flabScrollUp {
+  bottom: 2.5rem;
+  position: absolute;
+  left: 50%;
+  width: 1.875rem;
+  height: 1.875rem;
+  background-color: #c6c8ca;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  transform: translateX(-50%);
+  margin-left: 0.3125rem;
+  border-radius: 100%;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.flabApperance .flabScrollUp:hover {
+  background-color: #ddd;
+}
+
+.flabApperance .flabScrollUp i {
+  font-size: 1.5625rem;
+  color: #fff;
+}
+
 .flabHeader {
   min-height: 8.25rem;
   border: 0.25rem solid #102948;
@@ -3295,6 +3407,16 @@ body {
 
 .flabHamburger__item:nth-child(3) {
   width: 1.75rem;
+}
+
+.flabHamburger--panelHam {
+  top: 3.5625rem;
+  left: 50%;
+  right: 0.375rem;
+}
+
+.flabHamburger--panelHam:hover {
+  top: 3.5625rem;
 }
 
 .flabTextPart__wrap {
@@ -3713,7 +3835,7 @@ body {
 
 .flabAdvantages__wrap {
   position: relative;
-  padding-top: 25rem;
+  padding-top: 26.875rem;
 }
 
 @media (max-width: 991.98px) {
@@ -3752,18 +3874,18 @@ body {
 }
 
 .flabAdvantages__orbitFirst {
-  max-width: 52rem;
-  min-height: 52rem;
+  max-width: 15.625rem;
+  min-height: 15.625rem;
   animation-name: planet-rotate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 30s;
+  animation-duration: 10s;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__orbitFirst {
-    max-width: 48.875rem;
-    min-height: 48.875rem;
+    max-width: 13.75rem;
+    min-height: 13.75rem;
   }
 }
 
@@ -3772,18 +3894,18 @@ body {
 }
 
 .flabAdvantages__orbitSecond {
-  max-width: 44.375rem;
-  min-height: 44.375rem;
+  max-width: 20.625rem;
+  min-height: 20.625rem;
   animation-name: planet-rotate-back;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 40s;
+  animation-duration: 20s;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__orbitSecond {
-    max-width: 41.25rem;
-    min-height: 41.25rem;
+    max-width: 18.75rem;
+    min-height: 18.75rem;
   }
 }
 
@@ -3792,18 +3914,18 @@ body {
 }
 
 .flabAdvantages__orbitThird {
-  max-width: 37.8125rem;
-  min-height: 37.8125rem;
+  max-width: 25.625rem;
+  min-height: 25.625rem;
   animation-name: planet-rotate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 50s;
+  animation-duration: 30s;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__orbitThird {
-    max-width: 34.6875rem;
-    min-height: 34.6875rem;
+    max-width: 23.75rem;
+    min-height: 23.75rem;
   }
 }
 
@@ -3812,18 +3934,18 @@ body {
 }
 
 .flabAdvantages__orbitFourth {
-  max-width: 31.5rem;
-  min-height: 31.5rem;
+  max-width: 30rem;
+  min-height: 30rem;
   animation-name: planet-rotate-back;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 60s;
+  animation-duration: 40s;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__orbitFourth {
-    max-width: 28.375rem;
-    min-height: 28.375rem;
+    max-width: 28.125rem;
+    min-height: 28.125rem;
   }
 }
 
@@ -3832,18 +3954,18 @@ body {
 }
 
 .flabAdvantages__orbitFifth {
-  max-width: 25.625rem;
-  min-height: 25.625rem;
+  max-width: 35rem;
+  min-height: 35rem;
   animation-name: planet-rotate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 70s;
+  animation-duration: 30s;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__orbitFifth {
-    max-width: 22.5rem;
-    min-height: 22.5rem;
+    max-width: 33.125rem;
+    min-height: 33.125rem;
   }
 }
 
@@ -3852,22 +3974,102 @@ body {
 }
 
 .flabAdvantages__orbitSixth {
-  max-width: 18.4375rem;
-  min-height: 18.4375rem;
+  max-width: 40rem;
+  min-height: 40rem;
   animation-name: planet-rotate-back;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 60s;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__orbitSixth {
+    max-width: 38.125rem;
+    min-height: 38.125rem;
+  }
+}
+
+.flabAdvantages__orbitSixth p {
+  right: 2.5rem;
+}
+
+.flabAdvantages__orbitSeventh {
+  max-width: 45rem;
+  min-height: 45rem;
+  animation-name: planet-rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 70s;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__orbitSeventh {
+    max-width: 43.125rem;
+    min-height: 43.125rem;
+  }
+}
+
+.flabAdvantages__orbitSeventh p {
+  left: 2.5rem;
+}
+
+.flabAdvantages__orbitEighth {
+  max-width: 50rem;
+  min-height: 50rem;
+  animation-name: planet-rotate-back;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 50s;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__orbitEighth {
+    max-width: 48.125rem;
+    min-height: 48.125rem;
+  }
+}
+
+.flabAdvantages__orbitEighth p {
+  right: 2.5rem;
+}
+
+.flabAdvantages__orbitNineth {
+  max-width: 55rem;
+  min-height: 55rem;
+  animation-name: planet-rotate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 80s;
 }
 
 @media (max-width: 1199.98px) {
-  .flabAdvantages__orbitSixth {
-    max-width: 15.3125rem;
-    min-height: 15.3125rem;
+  .flabAdvantages__orbitNineth {
+    max-width: 53.125rem;
+    min-height: 53.125rem;
   }
 }
 
-.flabAdvantages__orbitSixth p {
+.flabAdvantages__orbitNineth p {
+  left: 2.5rem;
+}
+
+.flabAdvantages__orbitTenth {
+  max-width: 60rem;
+  min-height: 60rem;
+  animation-name: planet-rotate-back;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 40s;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__orbitTenth {
+    max-width: 58.125rem;
+    min-height: 58.125rem;
+  }
+}
+
+.flabAdvantages__orbitTenth p {
   right: 2.5rem;
 }
 
@@ -3877,107 +4079,167 @@ body {
 }
 
 .flabAdvantages__wayFirst {
-  max-width: 52rem;
-  min-height: 52rem;
+  max-width: 15.625rem;
+  min-height: 15.625rem;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__wayFirst {
-    max-width: 48.875rem;
-    min-height: 48.875rem;
+    max-width: 13.75rem;
+    min-height: 13.75rem;
   }
 }
 
 .flabAdvantages__waySecond {
-  max-width: 44.375rem;
-  min-height: 44.375rem;
+  max-width: 20.625rem;
+  min-height: 20.625rem;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__waySecond {
-    max-width: 41.25rem;
-    min-height: 41.25rem;
+    max-width: 18.75rem;
+    min-height: 18.75rem;
   }
 }
 
 .flabAdvantages__wayThird {
-  max-width: 37.8125rem;
-  min-height: 37.8125rem;
-}
-
-@media (max-width: 1199.98px) {
-  .flabAdvantages__wayThird {
-    max-width: 34.6875rem;
-    min-height: 34.6875rem;
-  }
-}
-
-.flabAdvantages__wayFourth {
-  max-width: 31.5rem;
-  min-height: 31.5rem;
-}
-
-@media (max-width: 1199.98px) {
-  .flabAdvantages__wayFourth {
-    max-width: 28.375rem;
-    min-height: 28.375rem;
-  }
-}
-
-.flabAdvantages__wayFifth {
   max-width: 25.625rem;
   min-height: 25.625rem;
 }
 
 @media (max-width: 1199.98px) {
+  .flabAdvantages__wayThird {
+    max-width: 23.75rem;
+    min-height: 23.75rem;
+  }
+}
+
+.flabAdvantages__wayFourth {
+  max-width: 30rem;
+  min-height: 30rem;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__wayFourth {
+    max-width: 28.125rem;
+    min-height: 28.125rem;
+  }
+}
+
+.flabAdvantages__wayFifth {
+  max-width: 35rem;
+  min-height: 35rem;
+}
+
+@media (max-width: 1199.98px) {
   .flabAdvantages__wayFifth {
-    max-width: 22.5rem;
-    min-height: 22.5rem;
+    max-width: 33.125rem;
+    min-height: 33.125rem;
   }
 }
 
 .flabAdvantages__waySixth {
-  max-width: 18.4375rem;
-  min-height: 18.4375rem;
+  max-width: 40rem;
+  min-height: 40rem;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__waySixth {
-    max-width: 15.3125rem;
-    min-height: 15.3125rem;
+    max-width: 38.125rem;
+    min-height: 38.125rem;
+  }
+}
+
+.flabAdvantages__waySeventh {
+  max-width: 45rem;
+  min-height: 45rem;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__waySeventh {
+    max-width: 43.125rem;
+    min-height: 43.125rem;
+  }
+}
+
+.flabAdvantages__wayEighth {
+  max-width: 50rem;
+  min-height: 50rem;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__wayEighth {
+    max-width: 48.125rem;
+    min-height: 48.125rem;
+  }
+}
+
+.flabAdvantages__wayNineth {
+  max-width: 55rem;
+  min-height: 55rem;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__wayNineth {
+    max-width: 53.125rem;
+    min-height: 53.125rem;
+  }
+}
+
+.flabAdvantages__wayTenth {
+  max-width: 60rem;
+  min-height: 60rem;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__wayTenth {
+    max-width: 58.125rem;
+    min-height: 58.125rem;
   }
 }
 
 .flabAdvantages__orbitCenter {
-  max-width: 13.25rem;
+  max-width: 10.9375rem;
   width: 100%;
-  min-height: 13.25rem;
+  min-height: 10.9375rem;
   box-shadow: 0px 0.25rem 1.3125rem 0 rgba(79, 228, 228, 0.48);
   background-image: linear-gradient(107deg, #002738, #fc3f69 27%, #002652 55%, #36639f 79%, #4fe4e4);
-  border-style: solid;
-  border-width: 0.9375rem;
-  border: 0.125rem solid #e8e8e8;
+  border: 0rem solid #fff;
 }
 
 @media (max-width: 1199.98px) {
   .flabAdvantages__orbitCenter {
-    border-width: 0.625rem;
+    border-width: 0.9375rem;
     box-shadow: none;
   }
 }
 
 .flabAdvantages__orbitLogo {
-  max-width: 11rem;
+  max-width: 9.375rem;
   width: 100%;
-  min-height: 11rem;
+  min-height: 9.375rem;
   background-color: #fff;
 }
 
+@media (max-width: 1199.98px) {
+  .flabAdvantages__orbitLogo {
+    max-width: 7.5rem;
+    min-height: 7.5rem;
+  }
+}
+
 .flabAdvantages__orbitLogoImg {
-  max-width: 8.3125rem;
+  max-width: 6.25rem;
   width: 100%;
-  min-height: 5.375rem;
+  min-height: 3.3125rem;
   margin: auto;
+}
+
+@media (max-width: 1199.98px) {
+  .flabAdvantages__orbitLogoImg {
+    max-width: 4.375rem;
+    min-height: 1.4375rem;
+  }
 }
 
 .flabAdvantages__orbitLogoImg img,
@@ -3990,7 +4252,7 @@ body {
   animation-name: planet-rotate-back;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 30s;
+  animation-duration: 10s;
   position: absolute;
   transform-origin: left center;
   left: 0;
@@ -4006,7 +4268,7 @@ body {
   animation-name: planet-rotate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 40s;
+  animation-duration: 20s;
   position: absolute;
   transform-origin: left center;
   left: 0;
@@ -4022,7 +4284,7 @@ body {
   animation-name: planet-rotate-back;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 50s;
+  animation-duration: 30s;
   position: absolute;
   transform-origin: left center;
   left: 0;
@@ -4038,7 +4300,7 @@ body {
   animation-name: planet-rotate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 60s;
+  animation-duration: 40s;
   position: absolute;
   transform-origin: left center;
   left: 0;
@@ -4055,7 +4317,7 @@ body {
   animation-name: planet-rotate-back;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 70s;
+  animation-duration: 30s;
   position: absolute;
   transform-origin: left center;
   left: 0;
@@ -4072,7 +4334,75 @@ body {
   animation-name: planet-rotate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  animation-duration: 60s;
+  position: absolute;
+  transform-origin: left center;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  z-index: 9999;
+}
+
+.flabAdvantages__atmosphereWrapSeventh {
+  animation-name: planet-rotate-back;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 70s;
+  position: absolute;
+  transform-origin: left center;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  z-index: 9999;
+}
+
+.flabAdvantages__atmosphereWrapEighth {
+  animation-name: planet-rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 50s;
+  position: absolute;
+  transform-origin: left center;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  z-index: 9999;
+}
+
+.flabAdvantages__atmosphereWrapNineth {
+  animation-name: planet-rotate-back;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   animation-duration: 80s;
+  position: absolute;
+  transform-origin: left center;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  z-index: 9999;
+}
+
+.flabAdvantages__atmosphereWrapTenth {
+  animation-name: planet-rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 40s;
   position: absolute;
   transform-origin: left center;
   left: 0;
@@ -4123,6 +4453,22 @@ body {
   border: 0.0625rem solid #8b315c;
 }
 
+.flabAdvantages__atmosphere--seventhAtmos {
+  border: 0.0625rem solid #cfd84e;
+}
+
+.flabAdvantages__atmosphere--eighthAtmos {
+  border: 0.0625rem solid #7644b8;
+}
+
+.flabAdvantages__atmosphere--ninethAtmos {
+  border: 0.0625rem solid #dd8b3e;
+}
+
+.flabAdvantages__atmosphere--tenthAtmos {
+  border: 0.0625rem solid #f82bff;
+}
+
 .flabAdvantages__planet {
   max-width: 1.375rem;
   width: 100%;
@@ -4152,6 +4498,22 @@ body {
 
 .flabAdvantages__planet--sixthPlanet {
   background-color: #8b315c;
+}
+
+.flabAdvantages__planet--seventhPlanet {
+  background-color: #cfd84e;
+}
+
+.flabAdvantages__planet--eighthPlanet {
+  background-color: #7644b8;
+}
+
+.flabAdvantages__planet--ninethPlanet {
+  background-color: #dd8b3e;
+}
+
+.flabAdvantages__planet--tenthPlanet {
+  background-color: #f82bff;
 }
 
 @keyframes planet-rotate {
@@ -5300,7 +5662,7 @@ body {
 }
 
 .flabVacancy__moreInfo h4 {
-  font-size: 1rem;
+  font-￼size: 1rem;
   margin-bottom: 1.5625rem;
 }
 
@@ -5720,6 +6082,9 @@ body {
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: rotateY(-50%);
 }
 
 .flabPortfolioDetail .navBtnPotrfolio i {
@@ -5783,6 +6148,51 @@ body {
   padding-top: 1.875rem;
 }
 
+.flabPortfolioDetail__infoDesc .fr-video {
+  position: relative;
+  width: 50%;
+  min-height: 18.75rem;
+  display: block;
+  float: left;
+  margin-right: 1.875rem;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991.98px) {
+  .flabPortfolioDetail__infoDesc .fr-video {
+    width: 100%;
+    min-height: 25rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .flabPortfolioDetail__infoDesc .fr-video {
+    min-height: 18.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .flabPortfolioDetail__infoDesc .fr-video {
+    min-height: 15.625rem;
+  }
+}
+
+.flabPortfolioDetail__infoDesc .fr-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.flabPortfolioDetail__infoDesc .fr-fvr {
+  float: right;
+}
+
+.flabPortfolioDetail__infoDesc .fr-fvl {
+  float: left;
+}
+
 .flabPortfolioDetail__infoCaption {
   font-family: "Stolzl";
   font-size: 1.125rem;
@@ -5819,6 +6229,7 @@ body {
   font-size: 0.875rem;
   font-family: "StolzlBook";
   box-shadow: none;
+  clear: both;
 }
 
 @media (max-width: 767.98px) {
@@ -5948,7 +6359,7 @@ body {
 
 @media (max-width: 575.98px) {
   .flabPortfolio__filters {
-    padding-left: 5rem;
+    padding-left: 3.4375rem;
   }
 }
 
@@ -6084,20 +6495,18 @@ body {
 }
 
 .flabMainSlider {
-  min-height: 100%;
+  min-height: calc(100vh - 132px);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
-}
-
-.flabMainSlider__content {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  left: 50%;
+  background-size: cover;
+  background-position: center center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
 }
 
 @media (max-width: 1199.98px) {
@@ -6111,7 +6520,8 @@ body {
   width: 100%;
 }
 
-.flabMainSlider__logo img, .flabMainSlider__logo svg {
+.flabMainSlider__logo img,
+.flabMainSlider__logo svg {
   width: 100%;
   max-width: 100%;
 }
