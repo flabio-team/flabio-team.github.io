@@ -35,7 +35,7 @@ $(document).ready(function () {
   // smooth scroll down end //////////////////////////////////////////////////////////////
 
   // menu header //////////////////////////////////////////////////////////////
-  $('.flabHamburger').on('click', function () {
+  $('.flabHamburger, .flabAgTrigger').on('click', function () {
     $('.flabHiddenMnu').addClass('flabHiddenMnu--open');
     $('.flabHiddenMnu').removeClass('flabHiddenMnu--close');
   });
