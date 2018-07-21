@@ -3139,8 +3139,8 @@ body {
   color: #fff;
 }
 
-.show {
-  right: 0;
+.flabShow {
+  right: 0.9375rem;
 }
 
 .flabAudio__equalizer {

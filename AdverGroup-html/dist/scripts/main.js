@@ -16,9 +16,9 @@ $(document).ready(function () {
       var head_h = $('.flabHeader').height();
       var windowTop = $('body').scrollTop();
       if (head_h < windowTop) {
-        $('.flabApperance').addClass('show');
+        $('.flabApperance').addClass('flabShow');
       } else {
-        $('.flabApperance').removeClass('show');
+        $('.flabApperance').removeClass('flabShow');
       }
     });
   };
@@ -336,6 +336,12 @@ $(document).ready(function () {
     }
   });
   // audio volume end //////////////////////////////////////////////////////////////////
+
+  // malihu scroll //////////////////////////////////////////////////////////////////
+  $('.navMenu-js').mCustomScrollbar({
+    theme: 'themeMalihu'
+  });
+  // malihu scroll end //////////////////////////////////////////////////////////////////
 
 
   // services 3d card //////////////////////////////////////////////////////////////////
