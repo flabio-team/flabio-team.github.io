@@ -1,11 +1,28 @@
 'use strict';
 
 $(document).ready(function () {
-  // apperance block
 
+  // equalizer click toggleClass //////////////////////////////////////////////////////////////////
+  $('.equalizer-js').on('click', function () {
+    $('.equalizer-js').toggleClass('equalizerOff');
+  });
+  var audio = document.querySelector("audio");
+  audio.volume = 0.4;
+  // equalizer click toggleClass //////////////////////////////////////////////////////////////////
 
-  // apperance block end
-
+  // right panel //////////////////////////////////////////////////////////////
+  if (Modernizr.mq('(min-width: 992px)')) {
+    $('body').scroll(function () {
+      var head_h = $('.flabHeader').height();
+      var windowTop = $('body').scrollTop();
+      if (head_h < windowTop) {
+        $('.flabApperance').addClass('show');
+      } else {
+        $('.flabApperance').removeClass('show');
+      }
+    });
+  };
+  // right panel end //////////////////////////////////////////////////////////////
 
   // smooth scroll down //////////////////////////////////////////////////////////////
   $(".flabSmooth").click(function (e) {
@@ -15,9 +32,7 @@ $(document).ready(function () {
       scrollTop: $(href).offset().top
     }, 800);
   });
-
   // smooth scroll down end //////////////////////////////////////////////////////////////
-
 
   // menu header //////////////////////////////////////////////////////////////
   $('.flabHamburger').on('click', function () {
@@ -34,7 +49,6 @@ $(document).ready(function () {
     $(this).next().slideToggle();
     $(this).toggleClass('angle-jsRotate');
   });
-
   // menu header end //////////////////////////////////////////////////////////////
 
   // swiper //////////////////////////////////////////////////////////////////
@@ -313,12 +327,15 @@ $(document).ready(function () {
 
   // tabs vacancy end //////////////////////////////////////////////////////////////////
 
-
-  // malihu scroll //////////////////////////////////////////////////////////////////
-  $('.navMenu-js').mCustomScrollbar({
-    theme: 'themeMalihu'
+  // audio volume //////////////////////////////////////////////////////////////////
+  $('.equalizer-js').click(function () {
+    if ($('#audio').get(0).muted == false) {
+      $('#audio').get(0).muted = true;
+    } else {
+      $('#audio').get(0).muted = false;
+    }
   });
-  // malihu scroll end //////////////////////////////////////////////////////////////////
+  // audio volume end //////////////////////////////////////////////////////////////////
 
 
   // services 3d card //////////////////////////////////////////////////////////////////

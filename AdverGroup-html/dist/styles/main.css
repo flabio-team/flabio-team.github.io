@@ -1800,7 +1800,6 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  pointer-events: none;
   z-index: 100;
   overflow: hidden;
   height: 12.5rem;
@@ -1827,19 +1826,26 @@ body {
   }
 }
 
-.flabCard__cardDesc h2 {
+.flabCard__cardDesc a {
   font-size: 1.125rem;
   font-weight: 400;
   font-family: 'Stolzl';
   color: #000000;
   margin-bottom: 0.9375rem;
   text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  transition: all .3s;
 }
 
 @media (max-width: 1199.98px) {
-  .flabCard__cardDesc h2 {
+  .flabCard__cardDesc a {
     font-size: 1.0625rem;
   }
+}
+
+.flabCard__cardDesc a:hover {
+  color: #ec376c;
 }
 
 .flabCard__cardDesc p {
@@ -2276,6 +2282,12 @@ body {
 .flabSlider--securitiesSlider .flabSlider__item {
   background-color: #e8e8e8;
   min-height: 20.8125rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 
 .flabSlider--securitiesSlider .swiper-button-next {
@@ -3023,6 +3035,12 @@ body {
   z-index: 9;
 }
 
+@media (max-width: 991.98px) {
+  .arrows {
+    display: none;
+  }
+}
+
 .arrows path {
   stroke: #fc3f69;
   fill: transparent;
@@ -3064,13 +3082,14 @@ body {
 .flabApperance {
   position: fixed;
   top: 0;
-  right: 0.9375rem;
+  right: -100%;
   z-index: 1;
   height: 100%;
   background-color: #fff;
   max-width: 3.125rem;
   width: 100%;
-  display: none;
+  display: block;
+  transition: all 1s;
 }
 
 .flabApperance:before {
@@ -3093,12 +3112,12 @@ body {
 }
 
 .flabApperance .flabScrollUp {
-  bottom: 2.5rem;
+  bottom: 0;
   position: absolute;
   left: 50%;
-  width: 1.875rem;
-  height: 1.875rem;
-  background-color: #c6c8ca;
+  width: 2.4375rem;
+  height: 2.4375rem;
+  background-color: #cf3c3a;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -3107,18 +3126,161 @@ body {
       justify-content: center;
   transform: translateX(-50%);
   margin-left: 0.3125rem;
-  border-radius: 100%;
   transition: all .3s;
   cursor: pointer;
 }
 
 .flabApperance .flabScrollUp:hover {
-  background-color: #ddd;
+  background-color: #102948;
 }
 
 .flabApperance .flabScrollUp i {
   font-size: 1.5625rem;
   color: #fff;
+}
+
+.show {
+  right: 0;
+}
+
+.flabAudio__equalizer {
+  display: inline-block;
+  width: 15px;
+  border: 0;
+  padding: 0.5em;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+
+.flabAudio__equalizerItem {
+  display: inline-block;
+  width: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+}
+
+.flabAudio__equalizerItem:first-child {
+  height: 10px;
+  left: 0;
+  animation-name: shorteq;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+}
+
+.flabAudio__equalizerItem:nth-child(2) {
+  height: 10px;
+  left: 6px;
+  animation-name: talleq;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.17s;
+}
+
+.flabAudio__equalizerItem:last-child {
+  height: 10px;
+  left: 12px;
+  animation-name: shorteq;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.34s;
+}
+
+.equalizerOff .flabAudio__equalizerItem:first-child {
+  left: 0;
+  height: 6px;
+  animation: none;
+  animation-duration: 0.5s;
+  animation-delay: 0.34s;
+  animation-iteration-count: 1;
+}
+
+.equalizerOff .flabAudio__equalizerItem:nth-child(2) {
+  left: 6px;
+  height: 8px;
+  animation: none;
+  animation-duration: 0.5s;
+  animation-delay: 0.34s;
+  animation-iteration-count: 1;
+}
+
+.equalizerOff .flabAudio__equalizerItem:last-child {
+  left: 12px;
+  height: 12px;
+  animation: none;
+  animation-duration: 0.5s;
+  animation-delay: 0.34s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shorteq {
+  0% {
+    height: 10px;
+  }
+  50% {
+    height: 5px;
+  }
+  100% {
+    height: 10px;
+  }
+}
+
+@keyframes talleq {
+  0% {
+    height: 15px;
+  }
+  50% {
+    height: 8px;
+  }
+  100% {
+    height: 15px;
+  }
+}
+
+.equalizer-js {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  left: 1.0625rem;
+  top: 0.625rem;
+}
+
+.equalizer-js--mainEq {
+  left: 98%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 991.98px) {
+  .equalizer-js--mainEq {
+    top: 1.875rem;
+    left: 75%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .equalizer-js--mainEq {
+    left: 85%;
+  }
+}
+
+@media (max-width: 485.98px) {
+  .equalizer-js--mainEq {
+    left: 82%;
+  }
+}
+
+@media (max-width: 420.98px) {
+  .equalizer-js--mainEq {
+    top: 3.75rem;
+    left: 88%;
+  }
 }
 
 .flabHeader {
@@ -3181,6 +3343,12 @@ body {
   width: 100%;
 }
 
+@media (max-width: 767.98px) {
+  .flabHeader__logo {
+    max-width: 12.5rem;
+  }
+}
+
 @media (max-width: 991.98px) {
   .flabHeader__logo {
     margin: auto;
@@ -3198,7 +3366,8 @@ body {
       justify-content: center;
 }
 
-.flabHeader__logo img, .flabHeader__logo svg {
+.flabHeader__logo img,
+.flabHeader__logo svg {
   width: 100%;
   max-width: 100%;
 }
@@ -3246,7 +3415,8 @@ body {
   }
 }
 
-.flabHeader__info p, .flabHeader__info a {
+.flabHeader__info p,
+.flabHeader__info a {
   color: #102948;
   font-family: "Stolzl";
   display: block;
@@ -3255,13 +3425,15 @@ body {
 }
 
 @media (max-width: 1199.98px) {
-  .flabHeader__info p, .flabHeader__info a {
+  .flabHeader__info p,
+  .flabHeader__info a {
     font-size: 0.8125rem;
   }
 }
 
 @media (max-width: 991.98px) {
-  .flabHeader__info p, .flabHeader__info a {
+  .flabHeader__info p,
+  .flabHeader__info a {
     font-size: 1rem;
   }
 }
@@ -3317,6 +3489,7 @@ body {
 @media (max-width: 1199.98px) {
   .flabHeader__btn {
     font-size: 0.625rem;
+    max-width: 9.375rem;
   }
 }
 
@@ -3325,6 +3498,7 @@ body {
     margin: auto;
     margin-top: 1.25rem;
     font-size: 0.875rem;
+    max-width: 12.5rem;
   }
 }
 
@@ -3337,14 +3511,14 @@ body {
       align-items: flex-end;
   cursor: pointer;
   position: absolute;
-  right: 0.9375rem;
+  right: 2.1875rem;
   top: 41%;
   transition: all .6s;
 }
 
 @media (max-width: 1199.98px) {
   .flabHamburger {
-    right: -0.3125rem;
+    right: 1.875rem;
   }
 }
 
@@ -4416,8 +4590,8 @@ body {
 }
 
 .flabAdvantages__atmosphere {
-  width: 2.375rem;
-  min-height: 2.375rem;
+  width: 1.875rem;
+  min-height: 1.875rem;
   border-radius: 100%;
   display: -ms-flexbox;
   display: flex;
@@ -4426,7 +4600,7 @@ body {
   -ms-flex-pack: center;
       justify-content: center;
   position: absolute;
-  left: -1.25rem;
+  left: -0.9375rem;
 }
 
 .flabAdvantages__atmosphere--firstAtmos {
@@ -4470,9 +4644,9 @@ body {
 }
 
 .flabAdvantages__planet {
-  max-width: 1.375rem;
+  max-width: 1.0625rem;
   width: 100%;
-  min-height: 22px;
+  min-height: 17px;
   border-radius: 100%;
 }
 
@@ -6405,7 +6579,7 @@ body {
 }
 
 .flabError {
-  min-height: 49.0625rem;
+  min-height: calc(100vh - 460px);
   background-repeat: no-repeat;
   background-size: cover;
   display: -ms-flexbox;
@@ -6456,6 +6630,8 @@ body {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
 }
 
 @media (max-width: 991.98px) {
@@ -6553,6 +6729,7 @@ body {
   font-weight: 400;
   font-size: 2.5rem;
   margin-bottom: 0;
+  color: #102948;
 }
 
 @media (max-width: 1199.98px) {

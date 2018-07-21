@@ -40,7 +40,12 @@
 
     <!-- flabContent -->
     <div class="flabContent">
-
+      <div class="flabAudio">
+        <audio autoplay loop id="audio">
+          <source src="audio/music.ogg" type="audio/ogg; codecs=vorbis">
+          <source src="audio/music.mp3" type="audio/mp3">
+        </audio>
+      </div>
       <!-- header -->
       <div class="flabHeader">
         <div class="container">
@@ -143,6 +148,13 @@
               <i class="flabHamburger__item"></i>
               <i class="flabHamburger__item"></i>
             </div>
+            <button class="equalizer-js equalizer-js--mainEq" type="button">
+              <div class="flabAudio__equalizer">
+                <span class="flabAudio__equalizerItem"></span>
+                <span class="flabAudio__equalizerItem"></span>
+                <span class="flabAudio__equalizerItem"></span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -262,6 +274,28 @@
         </div>
       </div>
       <!-- flabHiddenMnu end -->
+
+      <!-- flabApperance -->
+      <div class="flabApperance">
+        <div class="flabHamburger flabHamburger--panelHam">
+          <i class="flabHamburger__item"></i>
+          <i class="flabHamburger__item"></i>
+          <i class="flabHamburger__item"></i>
+        </div>
+        <button class="equalizer-js" type="button">
+          <div class="flabAudio__equalizer">
+            <span class="flabAudio__equalizerItem"></span>
+            <span class="flabAudio__equalizerItem"></span>
+            <span class="flabAudio__equalizerItem"></span>
+          </div>
+        </button>
+        <div class="flabScrollUp">
+          <a href="#goal" class="flabSmooth">
+            <i class="fal fa-angle-up"></i>
+          </a>
+        </div>
+      </div>
+      <!-- flabApperance end -->
 
       <!-- flabBreadCrumbs -->
       <div class="flabBreadCrumbs">

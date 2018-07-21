@@ -40,7 +40,12 @@
     <!-- flabContent -->
 
     <div class="flabContent">
-
+      <div class="flabAudio">
+        <audio autoplay loop id="audio">
+          <source src="audio/music.ogg" type="audio/ogg; codecs=vorbis">
+          <source src="audio/music.mp3" type="audio/mp3">
+        </audio>
+      </div>
       <!-- header -->
       <div class="flabHeader">
         <div class="container">
@@ -143,6 +148,13 @@
               <i class="flabHamburger__item"></i>
               <i class="flabHamburger__item"></i>
             </div>
+            <button class="equalizer-js equalizer-js--mainEq" type="button">
+              <div class="flabAudio__equalizer">
+                <span class="flabAudio__equalizerItem"></span>
+                <span class="flabAudio__equalizerItem"></span>
+                <span class="flabAudio__equalizerItem"></span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -270,6 +282,13 @@
           <i class="flabHamburger__item"></i>
           <i class="flabHamburger__item"></i>
         </div>
+        <button class="equalizer-js" type="button">
+          <div class="flabAudio__equalizer">
+            <span class="flabAudio__equalizerItem"></span>
+            <span class="flabAudio__equalizerItem"></span>
+            <span class="flabAudio__equalizerItem"></span>
+          </div>
+        </button>
         <div class="flabScrollUp">
           <a href="#goal" class="flabSmooth">
             <i class="fal fa-angle-up"></i>
@@ -394,11 +413,11 @@
                 <div class="flabCard__itemCard">
                   <div class="flabCard__cardMove">
                     <div class="flabCard__cardContent">
-                      <div class="flabCard__img">
+                      <a href="#" class="flabCard__img">
                         <img src="images/services/services1.jpg" alt="">
-                      </div>
+                      </a>
                       <div class="flabCard__cardDesc">
-                        <h2>Наружная реклама</h2>
+                        <a href="#">Наружная реклама</a>
                         <p>Изготовим и разместим рекламу на популярных площадях города и региона с соблюдением юридических норм.</p>
                       </div>
                       <div class="flabCard__cardWrapLink">
@@ -415,11 +434,11 @@
                 <div class="flabCard__itemCard">
                   <div class="flabCard__cardMove">
                     <div class="flabCard__cardContent">
-                      <div class="flabCard__img">
+                      <a href="#" class="flabCard__img">
                         <img src="images/services/services2.jpg" alt="">
-                      </div>
+                      </a>
                       <div class="flabCard__cardDesc">
-                        <h2>полиграфия</h2>
+                        <a href="#">полиграфия</a>
                         <p>Оперативно создадим макет и распечатаем материал с помощью современного оборудования в собственной
                           типографии AdverPrint</p>
                       </div>
@@ -437,11 +456,11 @@
                 <div class="flabCard__itemCard">
                   <div class="flabCard__cardMove">
                     <div class="flabCard__cardContent">
-                      <div class="flabCard__img">
+                      <a href="#" class="flabCard__img">
                         <img src="images/services/services3.jpg" alt="">
-                      </div>
+                      </a>
                       <div class="flabCard__cardDesc">
-                        <h2>Дизайн</h2>
+                        <a href="#">Дизайн</a>
                         <p>Креативно подойдём к решению любой задачи, используя традиционные и уникальные авторские методики</p>
                       </div>
                       <div class="flabCard__cardWrapLink">
@@ -458,11 +477,11 @@
                 <div class="flabCard__itemCard">
                   <div class="flabCard__cardMove">
                     <div class="flabCard__cardContent">
-                      <div class="flabCard__img">
+                      <a href="#" class="flabCard__img">
                         <img src="images/services/services4.jpg" alt="">
-                      </div>
+                      </a>
                       <div class="flabCard__cardDesc">
-                        <h2>Продакшн</h2>
+                        <a href="#">Продакшн</a>
                         <p>Создадим социальный ролик, рекламу, клип, смонтируем видео</p>
                       </div>
                       <div class="flabCard__cardWrapLink">
@@ -479,11 +498,11 @@
                 <div class="flabCard__itemCard">
                   <div class="flabCard__cardMove">
                     <div class="flabCard__cardContent">
-                      <div class="flabCard__img">
+                      <a href="#" class="flabCard__img">
                         <img src="images/services/services5.jpg" alt="">
-                      </div>
+                      </a>
                       <div class="flabCard__cardDesc">
-                        <h2>Медиа размещение</h2>
+                        <a href="#">Медиа размещение</a>
                         <p>Разместим рекламу на региональных и государственных телеканалах и радиостанциях</p>
                       </div>
                       <div class="flabCard__cardWrapLink">
@@ -500,11 +519,11 @@
                 <div class="flabCard__itemCard">
                   <div class="flabCard__cardMove">
                     <div class="flabCard__cardContent">
-                      <div class="flabCard__img">
+                      <a href="#" class="flabCard__img">
                         <img src="images/services/services6.png" alt="">
-                      </div>
+                      </a>
                       <div class="flabCard__cardDesc">
-                        <h2>Разработка сайтов</h2>
+                        <a href="#">Разработка сайтов</a>
                         <p>Выведем на золотоносные позиций новый сайт, перезапустим «неработающий» ресурс, предложим услуги
                           по SMM-продвижению, ретаргетингу</p>
                       </div>
