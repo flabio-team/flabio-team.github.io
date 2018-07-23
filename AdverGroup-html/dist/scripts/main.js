@@ -2,6 +2,23 @@
 
 $(document).ready(function () {
 
+  // clickEffect //////////////////////////////////////////////////////////////////
+  var clickEffect = {
+    init: function init() {
+      $(document).on('click', function (e) {
+        $('<div class="flabCursor">').css({
+          top: e.clientY,
+          left: e.clientX
+        }).appendTo($(document.body)).on('animationend webkitAnimationEnd', function () {
+          $(this).remove();
+        });
+      });
+    }
+  };
+  clickEffect.init();
+  // clickEffect end //////////////////////////////////////////////////////////////////
+
+
   // equalizer click toggleClass //////////////////////////////////////////////////////////////////
   $('.equalizer-js').on('click', function () {
     $('.equalizer-js').toggleClass('equalizerOff');
